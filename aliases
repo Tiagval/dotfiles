@@ -1,0 +1,22 @@
+alias ls='ls --color=auto'
+alias l='ls -lht'
+alias df='df -h'						    #Always puts human readible 
+alias du='du -h'
+alias cp='cp -iv'							#Prevents overwriting. Tells where it copied
+alias mv='mv -iv'							#Prevents overwriting. Tells where it moved
+alias upgrade='sudo apt-get update && sudo apt-get upgrade'
+alias ..='cd ../'                           # Go back 1 directory level
+alias .2='cd ../../'                       # Go back 2 directory levels
+alias .3='cd ../../../'                     # Go back 3 directory levels
+alias .4='cd ../../../../'                  # Go back 4 directory levels
+alias .5='cd ../../../../../'               # Go back 5 directory levels
+alias .6='cd ../../../../../../'            # Go back 6 directory levels
+alias lip='ssh -XY tvale@lip.di.uminho.pt'
+alias lxplus='ssh -XY tdiasdov@lxplus.cern.ch'
+alias bye='sudo shutdown -h now'
+alias battery='upower -i $(upower -e|grep BAT) |grep -E "percentage|state"'
+alias cl='clear'
+alias qute='~/Documents/qutebrowser/qutebrowser.py'
+alias crontab='crontab -i'
+alias moveLeft='xrandr --output VGA1 --auto --left-of eDP1'
+alias raspi='ssh -XY pi@192.168.1.73'

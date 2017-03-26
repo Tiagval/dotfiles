@@ -1,0 +1,36 @@
+[user]
+	name = Tiago Vale	
+	email = tiagval@gmail.com
+[color]
+	branch = auto
+	status = auto
+    commit = auto
+    log    = auto
+
+[format]
+        pretty = "Commit:  %C(yellow)%H%nAuthor:  %C(green)%aN <%aE>%nDate:    (%C(red)%ar%Creset) %ai%nSubject: %s%n%n%b"
+
+[alias]
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    st = status
+    cm = commit
+    br = branch
+    co = checkout
+    mg = merge --no-ff
+    df = diff --color
+    who = shortlog -s --
+    lg1 = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white) %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    lg2 = log --decorate --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold green)%d%C(reset)%n''          %C(black)%s%C(reset) %C(bold red) %an%C(reset)' --abbrev-commit
+    lg = !"git lg2"
+[core]
+	excludesfile = /Users/juanpe/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
